@@ -1,11 +1,23 @@
-import './App.css';
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Nav from './components/Nav'
+import Auth from "./pages/Auth";
+import Dashboard from "./pages/Dashboard";
+import Home from "./pages/Home";
+import './App.css'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h1>Huuuh</h1>
+    <div>
+      <Nav />
+      <Routes>
+        <Route exact path="/" component={Home}></Route>
+        <Route path="/auth:form" component={Auth}></Route>
+        <Route path="/dashboard" component={Dashboard}></Route>
+      </Routes>
     </div>
   );
 }
 
-export default App;
+export default App
+
